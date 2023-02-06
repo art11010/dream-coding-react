@@ -1,0 +1,74 @@
+body {
+  margin: 2em;
+  color: #fff;
+  background: #333;
+}
+.orange {
+  color: orange;
+}
+.avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+.profile {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #dbdbdb;
+  box-shawdow: 10px 10px 25px -10px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  color: #333;
+}
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+.new {
+  position: absolute;
+  left: 70%;
+  top: 20%;
+  background-color: coral;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid #333;
+}
+.counter:hover .number {
+  color: coral;
+}
+.number {
+  margin: 0;
+  font-size: 7rem;
+  transition: 0.3s;
+}
+.button {
+  font-size: 1.5rem;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+}
+.banner {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.total {
+  font-size: 3rem;
+}
