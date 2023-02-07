@@ -29,9 +29,9 @@ function Products() {
       />
       <label htmlFor="checkbox">Show only 🔥 sale</label>
       <ul>
-        {products.map((product) => {
+        {products.map((product, item) => {
           return (
-            <li key={product.id}>
+            <li key={item}>
               <article>
                 <h3>{product.name}</h3>
                 <p>{product.price}</p>

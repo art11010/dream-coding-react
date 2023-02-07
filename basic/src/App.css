@@ -6,6 +6,7 @@ body {
 .orange {
   color: orange;
 }
+/* AppProfile */
 .avatar {
   position: relative;
   width: 200px;
@@ -38,6 +39,8 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
+
+/* AppCounter */
 .container {
   display: flex;
   justify-content: center;
@@ -71,4 +74,19 @@ body {
 }
 .total {
   font-size: 3rem;
+}
+
+/* AppXY */
+.pointer_wrap {
+  width: 100vw;
+  height: 100vh;
+}
+.pointer {
+  position: absolute;
+  background-color: coral;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  left: -15px;
+  top: -15px;
 }
