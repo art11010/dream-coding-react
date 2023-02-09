@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0.5rem 1rem;
   margin: 0.1rem 0;
-  color: var(--clor-text);
+  color: var(--color-text);
 }
 
 .checkbox {
@@ -33,4 +33,5 @@
 .button {
   color: var(--color-text);
   background-color: transparent;
+  vertical-align: -webkit-baseline-middle;
 }

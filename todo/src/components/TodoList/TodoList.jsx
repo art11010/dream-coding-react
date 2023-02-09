@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddTodo from '../AddTodo/AddTodo';
 import Todo from '../Todo/Todo';
 import styles from './TodoList.module.css';
 
 export default function TodoList({ filter }) {
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState(readTodosFromLocalStorage);
 
   const handleAdd = (todo) => setTodos([...todos, todo]);
   const handleUpdate = (updated) => {
@@ -13,6 +13,11 @@ export default function TodoList({ filter }) {
   const handleDelete = (deleted) => {
     setTodos(todos.filter((todo) => todo.id !== deleted.id));
   };
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   const filtered = getFilteredItems(todos, filter);
   return (
     <section className={styles.container}>
@@ -31,12 +36,12 @@ export default function TodoList({ filter }) {
   );
 }
 
-const initialTodos = [
-  { id: '1', text: '장보기', status: 'active' },
-  { id: '2', text: '공부하기', status: 'active' },
-];
-
 function getFilteredItems(todos, filter) {
   if (filter === 'all') return todos;
   return todos.filter((todo) => todo.status === filter);
+}
+
+function readTodosFromLocalStorage() {
+  const todos = localStorage.getItem('todos');
+  return todos ? JSON.parse(todos) : [];
 }
