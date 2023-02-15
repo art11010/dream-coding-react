@@ -46,7 +46,7 @@ export default function AppMentorsButton() {
 
 const Button = memo(({ text, onClick }) => {
   console.log('Button', text, 're-rendering 😜');
-  const result = useMemo(() => calculateSomthing(), []);
+  const result = useMemo(() => calculateSomething(), []);
   return (
     <button
       onClick={onClick}
@@ -62,7 +62,7 @@ const Button = memo(({ text, onClick }) => {
   );
 });
 
-function calculateSomthing() {
+function calculateSomething() {
   for (let i = 0; i < 10000; i++) {
     console.log('🔥');
   }

@@ -1,7 +1,7 @@
 import React from 'react';
+import VideoCard from '../components/VideoCard';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import VideosCard from '../components/VideosCard';
 import { useYoutubeApi } from '../context/YoutubeApiContext';
 
 export default function Videos() {
@@ -11,18 +11,18 @@ export default function Videos() {
     isLoading,
     error,
     data: videos,
-  } = useQuery(['videos', keyword], () => {
-    youtube.search(keyword);
+  } = useQuery(['videos', keyword], () => youtube.search(keyword), {
+    staleTime: 1000 * 60,
   });
+
   return (
     <>
-      <div>Videos{keyword ? `, Params : ${keyword}` : `🔥`}</div>
       {isLoading && <p>Loading...</p>}
-      {error && <p>Somthing is wrong🥲</p>}
+      {error && <p>Something is wrong🥲</p>}
       {videos && (
-        <ul>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 gap-y-4">
           {videos.map((video) => (
-            <VideosCard key={video.id} video={video} />
+            <VideoCard key={video.id} video={video} />
           ))}
         </ul>
       )}
